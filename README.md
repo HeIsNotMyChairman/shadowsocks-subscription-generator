@@ -1,5 +1,5 @@
 # shadowsocks-config-generator
-A simple script to generate multiple shadowsocks configs
+A simple script to generate subscription with multiple shadowsocks servers
 
 ## Usage:
 Open [android.py](https://github.com/HeIsNotMyChairman/shadowsocks-config-generator/blob/main/android.py) and modify the following variables:
