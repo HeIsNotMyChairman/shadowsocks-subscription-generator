@@ -1,4 +1,4 @@
-# shadowsocks-config-generator
+# shadowsocks-subscription-generator
 A simple script to generate subscription with multiple shadowsocks servers
 
 ## Usage:
