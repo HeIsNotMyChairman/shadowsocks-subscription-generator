@@ -1,0 +1,10 @@
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpicmVha3dhbGw=@server1.domain:80/?plugin=v2ray-plugin%3Bhost%3Dserver1.domain#server1.domain%2080%20ws
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpicmVha3dhbGw=@server1.domain:443/?plugin=v2ray-plugin%3Bmode%3Dquic%3Bhost%3Dserver1.domain#server1.domain%20443%20quic
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpicmVha3dhbGw=@server1.domain:443/?plugin=v2ray-plugin%3Btls%3Bhost%3Dserver1.domain#server1.domain%20443%20tls
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpicmVha3dhbGw=@server1.domain:10443#server1.domain%2010443%20plain
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdXN0b21pemVkYnJlYWt3YWxs@server2.domain:80/?plugin=v2ray-plugin%3Bhost%3Dserver2.domain#server2.domain%2080%20ws
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdXN0b21pemVkYnJlYWt3YWxs@server2.domain:443/?plugin=v2ray-plugin%3Bmode%3Dquic%3Bhost%3Dserver2.domain#server2.domain%20443%20quic
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdXN0b21pemVkYnJlYWt3YWxs@server2.domain:443/?plugin=v2ray-plugin%3Btls%3Bhost%3Dserver2.domain#server2.domain%20443%20tls
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdXN0b21pemVkYnJlYWt3YWxs@server2.domain:10443#server2.domain%2010443%20plain
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpicmVha3dhbGw=@server3.domain:8080/?plugin=v2ray-plugin%3Bhost%3Dserver3.domain#server3.domain%208080%20ws
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpicmVha3dhbGw=@server3.domain:1443/?plugin=v2ray-plugin%3Bmode%3Dquic%3Bhost%3Dserver3.domain#server3.domain%201443%20quic
