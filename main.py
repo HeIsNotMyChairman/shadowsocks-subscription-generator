@@ -1,4 +1,6 @@
 import json
+import urllib.parse
+import base64
 v2ray_all=[{'v2ray_cfg':'ws'},{'v2ray_cfg':'quic'},{'v2ray_cfg':'tls'}]   # all v2ray plugins
 
 servercfgs = [  
@@ -83,7 +85,7 @@ android_list=['android', 'com.google.android.wearable.app',     # apps that need
 
 default_config['proxy_apps']['android_list']=android_list
 
-if __name__ == '__main__':
+def android_json(filename='android.json'):
     custom_cfgs=[]
     result_cfgs=[]
     v2ray_cfgs = {
@@ -98,7 +100,7 @@ if __name__ == '__main__':
         for subconfig in subconfigs:
             config=servercfg.copy()
             if not 'v2ray_cfg' in subconfig:
-                subconfig['v2ray_cfg']='plain'
+                subconfig['v2ray_cfg'] = 'plain'
             config = {**config, **v2ray_cfgs[subconfig['v2ray_cfg']]}
             config={**config,**subconfig}
             del config['v2ray_cfg']
@@ -112,5 +114,26 @@ if __name__ == '__main__':
             if config['remarks'] == '':
                 config['remarks'] = "{} {} {}".format(config['server'], config['server_port'], subconfig['v2ray_cfg'])
             result_cfgs.append(config)
-    with open('android.json', 'w') as f:
+    with open(filename, 'w') as f:
         json.dump(result_cfgs, f)
+    return result_cfgs
+
+def SIP002_tofile(configs,filename='subscription'):
+    SS_URIs=[]
+    for config in configs:
+        userinfo = base64.b64encode(bytes(config['method']+':'+config['password'], 'utf-8'))
+        SS_URI = 'ss://' + str(userinfo,'utf-8') + '@'+ config['server']+ ':' + str(config['server_port'])
+        if 'plugin' in config:
+            SS_URI_opts = config['plugin']+';'+config['plugin_opts']
+            SS_URI_opts= 'plugin=' + urllib.parse.quote(SS_URI_opts)
+            SS_URI=SS_URI+ '/?'+SS_URI_opts
+        SS_URI=SS_URI+'#'+ urllib.parse.quote(config['remarks'])
+        SS_URIs.append(SS_URI)
+    with open(filename, 'w') as f:
+        for SS_URI in SS_URIs:
+            f.write("%s\n" % SS_URI)
+
+if __name__ == '__main__':
+    json_cfgs=android_json()
+    SIP002_tofile(json_cfgs)
+
